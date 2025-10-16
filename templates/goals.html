@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Journal - AI Support</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="app-logo">Life Journal</div>
+        </div>
+
+        <ul class="nav-links">
+            <li>
+                <a href="journal.html" class="nav-item">
+                    <span class="icon"></span>
+                    Journal
+                </a>
+            </li>
+            <li>
+                <a href="ai-support.html" class="nav-item active">
+                    <span class="icon"></span>
+                    AI Support
+                </a>
+            </li>
+            <li>
+                <a href="goals.html" class="nav-item">
+                    <span class="icon"></span>
+                    Goals
+                </a>
+            </li>
+            <li>
+                <a href="mind-space.html" class="nav-item">
+                    <span class="icon"></span>
+                    Mind Space
+                </a>
+            </li>
+            <li>
+                <a href="insights.html" class="nav-item">
+                    <span class="icon"></span>
+                    Insights
+                </a>
+            </li>
+        </ul>
+
+        <div class="sign-out-section">
+            <a href="#" class="nav-item sign-out">
+                <span class="icon">➔</span>
+                Sign Out
+            </a>
+        </div>
+    </nav>
+
+    
+    <main class="main-content">
+    <header class="page-header">
+        <h1>Goals & Tasks</h1>
+        <p class="subtitle">Track your progress and celebrate achievements</p>
+    </header>
+
+    <section class="goals-progress-card card">
+        <div class="progress-details">
+            <div class="progress-circle-wrapper">
+                <span class="progress-icon">◎</span> 
+                <span class="progress-count">1 / 1</span>
+                <span class="progress-label">completed</span>
+            </div>
+        </div>
+        
+        <div class="progress-rate">
+            <div class="rate-value">100%</div>
+            <div class="rate-label">Progress</div>
+        </div>
+    </section>
+
+    <section class="add-goal-card card">
+        <h2>Add New Goal</h2>
+        <div class="add-goal-input-group">
+            <input 
+                type="text" 
+                class="goal-input" 
+                placeholder="What do you want to achieve?"
+            >
+            <button class="add-goal-button">+</button>
+        </div>
+    </section>
+
+    <section class="your-goals-list">
+        <h2>Your Goals</h2>
+        <div class="goal-item card">
+            <span class="goal-status-icon done">✓</span>
+            <span class="goal-text">going to gym</span>
+            <button class="delete-goal-button">🗑️</button>
+        </div>
+        </section>
+
+</main>    
+    
+</body>
+</html>
