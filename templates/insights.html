@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-
-</html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Journal - AI Support</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Life Journal - Insights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    
+
     <nav class="sidebar">
         <div class="sidebar-header">
             <div class="app-logo">Life Journal</div>
@@ -17,32 +15,27 @@
 
         <ul class="nav-links">
             <li>
-                <a href="journal.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('home') }}" class="nav-item {% if current_page == 'home' %}active{% endif %}">
                     Journal
                 </a>
             </li>
             <li>
-                <a href="ai-support.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('ai_support') }}" class="nav-item {% if current_page == 'ai_support' %}active{% endif %}">
                     AI Support
                 </a>
             </li>
             <li>
-                <a href="goals.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('goals') }}" class="nav-item {% if current_page == 'goals' %}active{% endif %}">
                     Goals
                 </a>
             </li>
             <li>
-                <a href="mind-space.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('mind_space') }}" class="nav-item {% if current_page == 'mind_space' %}active{% endif %}">
                     Mind Space
                 </a>
             </li>
             <li>
-                <a href="insights.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('insights') }}" class="nav-item {% if current_page == 'insights' %}active{% endif %}">
                     Insights
                 </a>
             </li>
@@ -57,65 +50,61 @@
     </nav>
 
     <main class="main-content">
-    <header class="page-header">
-        <h1>Insights</h1>
-        <p class="subtitle">Track your wellness journey</p>
-    </header>
+        <header class="page-header">
+            <h1>Insights</h1>
+            <p class="subtitle">Track your wellness journey</p>
+        </header>
 
-    <section class="metric-cards-container">
-        <div class="metric-card card">
-            <div class="metric-details">
-                <p class="metric-label">Journal Entries</p>
-                <div class="metric-value">2</div>
-            </div>
-            <span class="metric-icon">📊</span>
-        </div>
-
-        <div class="metric-card card">
-            <div class="metric-details">
-                <p class="metric-label">Goals Completed</p>
-                <div class="metric-value">1 / 1</div>
-            </div>
-            <span class="metric-icon">🟣</span>
-        </div>
-
-        <div class="metric-card card">
-            <div class="metric-details">
-                <p class="metric-label">Current Streak</p>
-                <div class="metric-value">0 days</div>
-            </div>
-            <span class="metric-icon">🔥</span>
-        </div>
-
-        <div class="metric-card card">
-            <div class="metric-details">
-                <p class="metric-label">Progress Rate</p>
-                <div class="metric-value">100%</div>
-            </div>
-            <span class="metric-icon">↗️</span>
-        </div>
-    </section>
-
-    <section class="weekly-summary-section">
-        <h2>Weekly Summary</h2>
-
-        <div class="summary-content card">
-            <p class="summary-label">Journaling Consistency</p>
-            
-            <div class="consistency-chart-placeholder">
-                <div class="chart-bar"></div>
-                <div class="chart-bar"></div>
-                <div class="chart-bar"></div>
-                <div class="chart-bar"></div>
-                <div class="chart-bar"></div>
-                <div class="chart-bar"></div>
-                <div class="chart-bar"></div>
+        <section class="metric-cards-container">
+            <div class="metric-card card">
+                <div class="metric-details">
+                    <p class="metric-label">Journal Entries</p>
+                    <div class="metric-value">{{ journal_count }}</div>
+                </div>
+                <span class="metric-icon">📊</span>
             </div>
 
-            <p class="chart-footer">Start your journaling streak today!</p>
-        </div>
-    </section>
+            <div class="metric-card card">
+                <div class="metric-details">
+                    <p class="metric-label">Goals Completed</p>
+                    <div class="metric-value">{{ goals_completed }} / {{ total_goals }}</div>
+                </div>
+                <span class="metric-icon">🟣</span>
+            </div>
 
-</main>
+            <div class="metric-card card">
+                <div class="metric-details">
+                    <p class="metric-label">Current Streak</p>
+                    <div class="metric-value">{{ streak_days }} days</div>
+                </div>
+                <span class="metric-icon">🔥</span>
+            </div>
+
+            <div class="metric-card card">
+                <div class="metric-details">
+                    <p class="metric-label">Progress Rate</p>
+                    <div class="metric-value">{{ progress_rate }}%</div>
+                </div>
+                <span class="metric-icon">↗️</span>
+            </div>
+        </section>
+
+        <section class="weekly-summary-section">
+            <h2>Weekly Summary</h2>
+
+            <div class="summary-content card">
+                <p class="summary-label">Journaling Consistency</p>
+
+                <div class="consistency-chart-placeholder">
+                    {% for day in weekly_journals %}
+                        <div class="chart-bar" style="height: {{ day }}px;"></div>
+                    {% endfor %}
+                </div>
+
+                <p class="chart-footer">Start your journaling streak today!</p>
+            </div>
+        </section>
+
+    </main>
 </body>
 </html>
