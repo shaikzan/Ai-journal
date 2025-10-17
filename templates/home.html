@@ -3,115 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Journal</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    </head>
-<body>
-    <nav class="sidebar">
-    <div class="sidebar-header">
-        <div class="app-logo">Life Journal</div>
-    </div>
-
-    <ul class="nav-links">
-        <li>
-            <a href="journal.html" class="nav-item active">
-                <span class="icon"></span>
-                Journal
-            </a>
-        </li>
-        <li>
-            <a href="ai-support.html" class="nav-item">
-                <span class="icon"></span>
-                AI Support
-            </a>
-        </li>
-        <li>
-            <a href="goals.html" class="nav-item">
-                <span class="icon"></span>
-                Goals
-            </a>
-        </li>
-        <li>
-            <a href="mind-space.html" class="nav-item">
-                <span class="icon"></span>
-                Mind Space
-            </a>
-        </li>
-        <li>
-            <a href="insights.html" class="nav-item">
-                <span class="icon"></span>
-                Insights
-            </a>
-        </li>
-    </ul>
-
-    <div class="sign-out-section">
-        <a href="#" class="nav-item sign-out">
-            <span class="icon">➔</span>
-            Sign Out
-        </a>
-    </div>
-    </nav>
-<!-- main page -->
-    <main class="main-content">
-    <header class="page-header">
-        <h1>Daily Journal</h1>
-        <p class="subtitle">Reflect on your day and receive supportive insights</p>
-    </header>
-
-    <section class="journal-entry-card card">
-        <h2 class="card-title">
-            <span class="sparkle-icon">✨</span>
-            Today's Entry
-        </h2>
-
-        <form class="journal-form">
-            <textarea
-                class="entry-textarea"
-                placeholder="How are you feeling today? What's on your mind?"
-            ></textarea>
-            
-            <button type="submit" class="submit-button">
-                <span class="icon"></span>
-                Save 
-            </button>
-        </form>
-    </section>
-
-    <section class="recent-entries-section">
-        <h2>Recent Entries</h2>
-        <div class="card center-text" style="padding: 50px;">
-            Your recent journal entries will appear here.
-        </div>
-    </section>
-
-</main>
-
-
-
-     
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Journal - AI Support</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Life Journal - Daily Journal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    
     <nav class="sidebar">
         <div class="sidebar-header">
             <div class="app-logo">Life Journal</div>
@@ -119,32 +14,27 @@
 
         <ul class="nav-links">
             <li>
-                <a href="journal.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('home') }}" class="nav-item {% if current_page == 'home' %}active{% endif %}">
                     Journal
                 </a>
             </li>
             <li>
-                <a href="ai-support.html" class="nav-item active">
-                    <span class="icon"></span>
+                <a href="{{ url_for('ai_support') }}" class="nav-item {% if current_page == 'ai_support' %}active{% endif %}">
                     AI Support
                 </a>
             </li>
             <li>
-                <a href="goals.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('goals') }}" class="nav-item {% if current_page == 'goals' %}active{% endif %}">
                     Goals
                 </a>
             </li>
             <li>
-                <a href="mind-space.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('mind_space') }}" class="nav-item {% if current_page == 'mind_space' %}active{% endif %}">
                     Mind Space
                 </a>
             </li>
             <li>
-                <a href="insights.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('insights') }}" class="nav-item {% if current_page == 'insights' %}active{% endif %}">
                     Insights
                 </a>
             </li>
@@ -159,7 +49,45 @@
     </nav>
 
     <main class="main-content">
-        
+        <header class="page-header">
+            <h1>Daily Journal</h1>
+            <p class="subtitle">Reflect on your day and receive supportive insights</p>
+        </header>
+
+        <section class="journal-entry-card card">
+            <h2 class="card-title">
+                <span class="sparkle-icon">✨</span>
+                Today's Entry
+            </h2>
+
+            <form class="journal-form" method="POST" action="{{ url_for('save_entry') }}">
+                <textarea
+                    name="entry"
+                    class="entry-textarea"
+                    placeholder="How are you feeling today? What's on your mind?"
+                ></textarea>
+
+                <button type="submit" class="submit-button">
+                    <span class="icon"></span>
+                    Save
+                </button>
+            </form>
+        </section>
+
+        <section class="recent-entries-section">
+            <h2>Recent Entries</h2>
+            {% if entries %}
+                {% for entry in entries %}
+                    <div class="card recent-entry">
+                        <p>{{ entry }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="card center-text" style="padding: 50px;">
+                    Your recent journal entries will appear here.
+                </div>
+            {% endif %}
+        </section>
     </main>
 </body>
-</html> -->
+</html>

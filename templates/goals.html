@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Journal - AI Support</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Life Journal - Goals & Tasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    
+
     <nav class="sidebar">
         <div class="sidebar-header">
             <div class="app-logo">Life Journal</div>
@@ -15,32 +15,27 @@
 
         <ul class="nav-links">
             <li>
-                <a href="journal.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('home') }}" class="nav-item {% if current_page == 'home' %}active{% endif %}">
                     Journal
                 </a>
             </li>
             <li>
-                <a href="ai-support.html" class="nav-item active">
-                    <span class="icon"></span>
+                <a href="{{ url_for('ai_support') }}" class="nav-item {% if current_page == 'ai_support' %}active{% endif %}">
                     AI Support
                 </a>
             </li>
             <li>
-                <a href="goals.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('goals') }}" class="nav-item {% if current_page == 'goals' %}active{% endif %}">
                     Goals
                 </a>
             </li>
             <li>
-                <a href="mind-space.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('mind_space') }}" class="nav-item {% if current_page == 'mind_space' %}active{% endif %}">
                     Mind Space
                 </a>
             </li>
             <li>
-                <a href="insights.html" class="nav-item">
-                    <span class="icon"></span>
+                <a href="{{ url_for('insights') }}" class="nav-item {% if current_page == 'insights' %}active{% endif %}">
                     Insights
                 </a>
             </li>
@@ -54,50 +49,48 @@
         </div>
     </nav>
 
-    
     <main class="main-content">
-    <header class="page-header">
-        <h1>Goals & Tasks</h1>
-        <p class="subtitle">Track your progress and celebrate achievements</p>
-    </header>
+        <header class="page-header">
+            <h1>Goals & Tasks</h1>
+            <p class="subtitle">Track your progress and celebrate achievements</p>
+        </header>
 
-    <section class="goals-progress-card card">
-        <div class="progress-details">
-            <div class="progress-circle-wrapper">
-                <span class="progress-icon">◎</span> 
-                <span class="progress-count">1 / 1</span>
-                <span class="progress-label">completed</span>
+        <section class="goals-progress-card card">
+            <div class="progress-details">
+                <div class="progress-circle-wrapper">
+                    <span class="progress-icon">◎</span>
+                    <span class="progress-count">1 / 1</span>
+                    <span class="progress-label">completed</span>
+                </div>
             </div>
-        </div>
-        
-        <div class="progress-rate">
-            <div class="rate-value">100%</div>
-            <div class="rate-label">Progress</div>
-        </div>
-    </section>
 
-    <section class="add-goal-card card">
-        <h2>Add New Goal</h2>
-        <div class="add-goal-input-group">
-            <input 
-                type="text" 
-                class="goal-input" 
-                placeholder="What do you want to achieve?"
-            >
-            <button class="add-goal-button">+</button>
-        </div>
-    </section>
-
-    <section class="your-goals-list">
-        <h2>Your Goals</h2>
-        <div class="goal-item card">
-            <span class="goal-status-icon done">✓</span>
-            <span class="goal-text">going to gym</span>
-            <button class="delete-goal-button">🗑️</button>
-        </div>
+            <div class="progress-rate">
+                <div class="rate-value">100%</div>
+                <div class="rate-label">Progress</div>
+            </div>
         </section>
 
-</main>    
-    
+        <section class="add-goal-card card">
+            <h2>Add New Goal</h2>
+            <div class="add-goal-input-group">
+                <input
+                    type="text"
+                    class="goal-input"
+                    placeholder="What do you want to achieve?"
+                >
+                <button class="add-goal-button">+</button>
+            </div>
+        </section>
+
+        <section class="your-goals-list">
+            <h2>Your Goals</h2>
+            <div class="goal-item card">
+                <span class="goal-status-icon done">✓</span>
+                <span class="goal-text">going to gym</span>
+                <button class="delete-goal-button">🗑️</button>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>

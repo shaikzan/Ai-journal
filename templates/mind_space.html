@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Journal - AI Support</title>
+    <title>Life Journal - Mind Space</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    
+
     <nav class="sidebar">
         <div class="sidebar-header">
             <div class="app-logo">Life Journal</div>
@@ -51,32 +51,45 @@
 
     <main class="main-content">
         <header class="page-header">
-            <h1>AI Support</h1>
-            <p class="subtitle">Talk with your compassionate AI companion</p>
+            <h1>Mind Space</h1>
+            <p class="subtitle">Your personal wellness sanctuary</p>
         </header>
 
-        <section class="ai-chat-card card">
-            <h2 class="card-title">
-                <span class="sparkle-icon">✨</span>
-                Emotional Support Chat
-            </h2>
+        <section class="wellness-toolkit">
+            <h2>Your Wellness Toolkit</h2>
+            <p class="section-description">Curated exercises and resources for your mental wellbeing</p>
 
-            <div class="chat-log">
-                <div class="chat-message user-message">
-                    i dont know why parents scold for bad marks
+            <div class="toolkit-cards-container">
+                <div class="toolkit-card card">
+                    <span class="toolkit-icon">💨</span>
+                    <h3>5-Minute Breathing Exercise</h3>
+                    <p class="card-description">Calm your mind with guided breathing</p>
+                    <button class="toolkit-button">Start</button>
                 </div>
 
-                <div class="chat-message ai-message">
-                    <p class="ai-intro">
-                        <span class="sparkle-icon">✨</span> It sounds like you're feeling confused and maybe a little hurt or frustrated when your parents scold you for bad marks. That's a really understandable feeling to have. It's tough when you're trying your best, or even just navigating the challenges of school, and the response you get is scolding.
-                    </p>
+                <div class="toolkit-card card">
+                    <span class="toolkit-icon">💚</span>
+                    <h3>Gratitude Practice</h3>
+                    <p class="card-description">Reflect on three things you're grateful for</p>
+                    <button class="toolkit-button">Begin</button>
+                </div>
 
-                    <p>
-                        Sometimes, when parents scold, it comes from a place of their own worries and anxieties. They might be worried about your future, or about you not reaching your full potential, or even about how it reflects on them. It's often not because they think you're a "bad" person or because they want to hurt you, but rather a clumsy way of expressing their concern.
-                    </p>
+                <div class="toolkit-card card">
+                    <span class="toolkit-icon">🧘‍♀️</span>
+                    <h3>Mindfulness Meditation</h3>
+                    <p class="card-description">Ground yourself in the present moment</p>
+                    <button class="toolkit-button">Meditate</button>
                 </div>
             </div>
+        </section>
 
+        <section class="recommended-videos">
+            <h2>Recommended Videos</h2>
+            <p class="section-description">Guided practices to support your mental health journey</p>
+
+            <div class="card center-text" style="padding: 20px 50px;">
+                Video list placeholder (e.g., 10-Minute Morning Meditation)
+            </div>
         </section>
     </main>
 </body>

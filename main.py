@@ -145,10 +145,37 @@ def callback():
     return redirect(url_for('home'))
 
 
+entries = []  # simple in-memory storage for now
+
+@app.route('/save-entry', methods=['POST'])
+def save_entry():
+    entry = request.form.get('entry')
+    if entry:
+        entries.append(entry)
+    return redirect(url_for('home'))
+
+
+@app.route('/ai-support')
+def ai_support():
+    return render_template('ai-support.html', current_page='ai_support')
 
 @app.route('/')
 def home():
-    return 'Hello'
+    return render_template('home.html', entries=entries, current_page='home')
+
+
+@app.route('/goals')
+def goals():
+    return render_template('goals.html')
+
+@app.route('/insights')
+def insights():
+    return render_template('insights.html')
+
+@app.route('/mind-space')
+def mind_space():
+    return render_template('mind_space.html', current_page='mind_space')
+
 
 
 with app.app_context():
