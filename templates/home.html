@@ -40,12 +40,17 @@
             </li>
         </ul>
 
-        <div class="sign-out-section">
-            <a href="#" class="nav-item sign-out">
-                <span class="icon">➔</span>
-                Sign Out
-            </a>
-        </div>
+        <div class="sign-in-section">
+    {% if user_logged_in %}
+    <a href="#" class="nav-item sign-in">
+        Sign in
+    </a>
+    {% else %}
+    <a href="{{ url_for('login') }}" class="nav-item sign-in">
+        Login
+    </a>
+    {% endif %}
+</div>
     </nav>
 
     <main class="main-content">

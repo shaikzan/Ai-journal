@@ -119,7 +119,7 @@ def register():
 
     return render_template('register.html', form=form, google_login_url=authorization_url)
 
-
+    
 # Callback route to handle Google login
 @app.route('/callback')
 def callback():

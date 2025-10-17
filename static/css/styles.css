@@ -225,21 +225,21 @@ h1 {
     padding-left: 16px; /* Adjusting padding because of the new border */
 }
 
-/* Sign Out Section Styling */
-.sign-out-section {
+/* Sign in Section Styling */
+.sign-in-section {
     padding-top: 15px;
     border-top: 1px solid #eee;
     margin-top: auto; /* Ensures it sticks to the bottom */
 }
 
-.sign-out {
-    color: #f44336; /* Using a distinct color for sign-out/danger actions */
+.sign-in {
+    color: #2e7d32; /* Using a distinct color for sign-out/danger actions */
     font-weight: 600;
 }
 
-.sign-out:hover {
-    background-color: #ffeaea;
-    color: #d32f2f;
+.sign-in:hover {
+    background-color: #c9deca;
+    color: #000000;
 }
 
 /* -------------------- JOURNAL PAGE STYLING -------------------- */
@@ -701,4 +701,237 @@ h1 {
 .toolkit-button:hover {
     background-color: #d1e8e2; /* Slightly darker light green on hover */
     border-color: var(--primary-green);
+}
+
+/* -------------------- HOME/LOGIN PAGE STYLING -------------------- */
+
+/* Override base body style for login page */
+.login-body {
+    /* Center the container both horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Remove the sidebar offset */
+    margin-left: 0;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px; /* Limits the form width */
+    padding: 20px;
+    text-align: center;
+}
+
+.login-header {
+    margin-bottom: 30px;
+}
+
+.login-logo {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+}
+
+.login-tagline {
+    font-size: 1em;
+    color: var(--text-light);
+}
+
+.login-card {
+    padding: 40px;
+    text-align: left; /* Aligns content inside the card */
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* Input Group Styling */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block; /* Makes the label take up its own line */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.login-form input:focus {
+    border-color: var(--primary-green);
+}
+
+/* Adjust the button for the login page */
+.login-button {
+    /* Reuse the styling from .submit-button in Step 3 */
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.signup-link {
+    text-align: center;
+    font-size: 0.95em;
+    color: var(--text-light);
+}
+
+.signup-link a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------- GOOGLE LOGIN & DIVIDER STYLING -------------------- */
+
+/* Google Button Styling */
+.google-login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 25px;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    color: #4285f4; /* Google Blue */
+    font-size: 1.1em;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.google-login-button:hover {
+    background-color: #f5f5f5;
+    border-color: #aaa;
+}
+
+.google-icon {
+    font-family: Arial, sans-serif; /* Fallback for a distinct 'G' */
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #55db37; /* Google Red */
+}
+
+/* Divider Styling (The 'or' line) */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.divider:not(:empty)::before {
+    margin-right: 0.5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 0.5em;
+}
+
+.divider-text {
+    color: #999;
+    font-size: 0.9em;
+}
+
+/* -------------------- REGISTER PAGE SPECIFIC STYLING -------------------- */
+
+/* 1. Modifying input groups for the new style (no labels, just placeholders) */
+.login-form .input-group {
+    margin-bottom: 20px;
+}
+
+/* Remove label spacing since we are using placeholders for labels */
+.login-form .input-group label {
+    display: none; 
+}
+
+/* 2. Style the main Signup button to look like the blue button in the image, but using our theme color */
+.primary-green-button {
+    /* Reusing the base submit button styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 25px;
+    margin-top: 15px; /* Add some space above the button */
+    background-color: var(--primary-green); /* Use your theme green */
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-green-button:hover {
+    background-color: #31a48c; /* Slightly darker green on hover */
+}
+
+/* 3. Adjust the "Already have an account? Login" link styling to match the image's placement */
+.signup-link {
+    text-align: center;
+    font-size: 1em; /* Slightly larger text */
+    margin-top: 15px; /* Space above */
+    margin-bottom: 25px; /* Space below before the divider */
+}
+
+.signup-link a {
+    font-weight: 700; /* Bold the link text */
+}
+
+
+/* 4. Adjust the social button spacing */
+.register-social-button {
+    /* Reuse the google-login-button styles but adjust margin */
+    margin-bottom: 15px; /* Less space than the default login button margin */
+}
+
+/* If you wanted a Facebook button (optional, but shows theme adaptation): */
+.facebook-login-button {
+    /* You don't have this in your current HTML, but here's how to style it */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 25px;
+    margin-bottom: 15px;
+    background-color: #4267b2; /* Standard Facebook blue */
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
