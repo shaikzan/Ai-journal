@@ -1,4 +1,93 @@
-/* Import Google Fonts - Using 'Inter' as a modern, clean font like in the UI */
+/* ===== General Page Setup ===== */
+body {
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Card Container ===== */
+.card {
+  border: none;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== Headings ===== */
+h2 {
+  font-weight: 600;
+  color: #2e7d32;
+  text-align: center;
+}
+
+/* ===== Input Fields ===== */
+.form-control {
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background: #4CAF50;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  padding: 10px;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #45a049;
+  transform: scale(1.03);
+}
+
+/* ===== Links ===== */
+a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Alert Messages ===== */
+.alert {
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+  .card {
+    width: 100% !important;
+    margin: 0 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+  }
+}/* Import Google Fonts - Using 'Inter' as a modern, clean font like in the UI */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 /* Basic CSS Reset & Global Styles */
